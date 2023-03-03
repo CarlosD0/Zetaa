@@ -1,0 +1,32 @@
+<ion-card *ngIf="entrada">
+  <ion-card-content>
+   <p id="fechaTexto">{{entrada.fechaTexto}}</p>
+   <ion-textarea rows="2" [(ngModel)]="entrada.texto">
+   </ion-textarea>
+   <ion-button (click)="guardar(entrada)">
+    Guardar
+  </ion-button>
+  <ion-range (ionKnobMoveStart)="onIonKnobMoveStart($event)" (ionKnobMoveEnd)="onIonKnobMoveEnd($event)"></ion-range>
+<div>
+  <ion-label>Humedad del la tierra: {{ moveStart }}</ion-label>
+</div>
+<div>
+  <ion-label>Temperatura de ambiente: {{ moveEnd }}</ion-label>
+</div>
+
+  </ion-card-content>
+  
+</ion-card>
+<ion-content>
+  <h1>Cultivo 1 </h1>
+  <ion-datetime>
+    <ion-buttons slot="buttons">
+      <ion-button (click)="confirm()">
+        Confirmar 
+      </ion-button>
+      <ion-button (click)="reset()">
+        Reset
+      </ion-button>
+    </ion-buttons>
+  </ion-datetime>
+</ion-content>

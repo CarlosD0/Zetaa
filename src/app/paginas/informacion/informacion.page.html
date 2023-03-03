@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/inicio" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Guia de cultivo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <p>Para un mejor aprovechamiento del cultivo y aumentar la calidad del mismo, les compartimos
+    la siguiente información. 
+  </p>
+  <ion-button expand="block" (click)="setOpen(true)">Humedad</ion-button>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Sobre la humedad relativa</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Humedad relativa es la relación, expresada en porcentaje, entre la cantidad de vapor de agua
+          realmente existente en la atmósfera y la que existiría si el aire estuviera saturado a la misma
+          temperatura.
+          El rango de humedad relativa óptima es de entre 60 – 90 %.        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button expand="block" (click)="AbrirTemperatura(true)">Temperatura</ion-button>
+  <ion-modal [isOpen]="Abierto">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Sobre la temperatura requerida</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="AbrirTemperatura(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Cuando se cultiva hongo seta, el control de los parámetros climáticos es fundamental. El
+rango de temperatura óptimo es de 18 – 28ºC      </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button expand="block" (click)="AbrirSubstrato(true)">Substrato</ion-button>
+  <ion-modal [isOpen]="AbiertoSubs">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Sobre el substrato a elegir </ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="AbrirSubstrato(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Los hongos del género Pleurotus, toman los nutrientes necesarios para su
+alimentación de los materiales sobre los que crecen. Tienen la capacidad
+de degradar celulosa y lignina presentes en diversos esquilmos agrícolas
+(pajas, rastrojos), desechos agroindustriales (bagazos de caña de azúcar,
+maguey tequilero, henequén, pulpa de café), y/o forestales (aserrín y
+viruta de diversas maderas).
+Para seleccionar el substrato, es indispensable conocer la disponibilidad y abundancia del mismo en la región en donde se piensa cultivar
+el hongo seta. Es importante tomar en cuenta, buen precio de adquisición
+y que sea fácil de transportar.
+Algunos de los substratos más utilizados para el cultivo de estos
+hongos son las pajas de cebada, trigo, centeno, avena, arroz y sorgo, y en
+menor cantidad la pulpa de café y algunos bagazos como los de caña de
+azúcar y de maguey tequilero, entre otros. Algunas veces, es recomendable hacer una combinación de substratos en diferente proporción, para
+incrementar la producción de hongos.   </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
